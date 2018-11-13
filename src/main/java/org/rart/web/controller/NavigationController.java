@@ -28,11 +28,11 @@ public class NavigationController {
     @RequestMapping(value = "/example1", method = RequestMethod.GET)
     public ModelAndView getExample1() {
         ModelAndView modelAndView = new ModelAndView("example1");
-        List<State> stateList = new ArrayList<>();
-        stateList = stateService.getAllStates();
+        List<String> stateNamesList = new ArrayList<>();
+        stateNamesList = stateService.getAllStatesNames();
 
-        if (!stateList.isEmpty()) {
-            modelAndView.addObject("stateList", stateList);
+        if (!stateNamesList.isEmpty()) {
+            modelAndView.addObject("stateList", stateNamesList);
         }
         return modelAndView;
     }

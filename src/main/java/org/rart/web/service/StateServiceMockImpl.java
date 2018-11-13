@@ -40,5 +40,13 @@ public class StateServiceMockImpl implements StateService {
 
     }
 
-
+    @Override
+    public List<String> getAllStatesNames() {
+        List<State> states = getAllStates();
+        List<String> stateNames = new ArrayList<>();
+        for (State state : states){
+            stateNames.add(state.getName());
+        }
+        return stateNames;
+    }
 }

@@ -12,7 +12,7 @@
         <option value="Select State">Select State</option>
         <option th:each="state : ${stateList}"
                 th:value="${state}"
-                th:text="${state.name}"></option>
+                th:text="${state}"></option>
     </select>
     <hr><br>
     <select class="select-box" id= "city" name = "city">
