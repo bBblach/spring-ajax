@@ -1,0 +1,26 @@
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Example 1</title>
+</head>
+<body>
+    <h1>Example 1</h1>
+<select class="select-box"  id="state" name="state" onblur="getCitiesForSelectedState()">
+        <option value="Select State">Select State</option>
+        <option th:each="state : ${stateList}"
+                th:value="${state}"
+                th:text="${state.name}"></option>
+    </select>
+    <hr><br>
+    <select class="select-box" id= "city" name = "city">
+        <option value="Select City">Select City</option>
+    </select>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/example1.js}"></script>
+
+</body>
+</html>
